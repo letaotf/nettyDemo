@@ -19,7 +19,7 @@ public class SocketTest {
         //开启Socket
         SocketChannel socketChannel = SocketChannel.open();
         //链接Socket
-        socketChannel.connect(new InetSocketAddress(8080));
+        socketChannel.connect(new InetSocketAddress(1333));
         //需要传输的结果
         String name = "我是陶峰-----124252353";
         //换车区
