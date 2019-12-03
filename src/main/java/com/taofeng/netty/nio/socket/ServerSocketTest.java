@@ -1,4 +1,4 @@
-package com.taofeng.netty.nio;
+package com.taofeng.netty.nio.socket;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
