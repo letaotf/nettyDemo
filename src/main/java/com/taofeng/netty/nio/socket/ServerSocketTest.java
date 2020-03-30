@@ -10,6 +10,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.channels.spi.SelectorProvider;
 import java.util.Objects;
 import java.util.Set;
 
@@ -32,7 +33,8 @@ public class ServerSocketTest {
         //设置为非阻塞
         serverSocketChannel.configureBlocking(false);
         //创建选择器
-        Selector selector = Selector.open();
+        Selector selector = SelectorProvider.provider().openSelector();
+
         //接受连接请求
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
