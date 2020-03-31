@@ -7,15 +7,17 @@ import io.netty.buffer.Unpooled;
  * <p>描述</p >
  *
  * @author: 乐陶（letao@maihaoche.com）
- * @date: 2020/3/30 3:59 PM
+ * @date: 2020/3/30 7:13 PM
  * @since V1.0
  */
-public class HeadBufTest {
+public class DirectBufTest {
+
+    // 这种使用于 socket 传输。 非堆内存，不会被jvm所回收
 
     public static void main(String[] args) {
         byte[] result = new byte[]{'a','b','c'};
         //创建堆缓冲区
-        ByteBuf headBuf = Unpooled.buffer();
+        ByteBuf headBuf = Unpooled.directBuffer();
         //写入值
         System.out.println("开始---------------写入");
         headBuf.writeBytes(result);
@@ -29,5 +31,7 @@ public class HeadBufTest {
         System.out.println("writeIndex:"+ headBuf.writerIndex());
         System.out.println("capacity:"+ headBuf.capacity());
         System.out.println("结果:"+ new String(redaResult));
+
     }
+
 }
